@@ -1,0 +1,53 @@
+<td>
+                    <a href="Home.php">Home</a>
+                </td>
+                <td>
+                   
+                </td>
+                <td>
+                    <a href="Registration.php">Registration</a>
+                </td>
+                <td>
+                    <a href="Contact.php">Contact</a>
+                </td>
+                <td>
+                    <a href=""></a>
+                </td>
+
+
+
+<?php
+include("../elements/nav.php");
+?>
+
+
+<main>
+
+</main>
+
+
+
+
+<?php
+include "../elements/footer.php";
+?>
+
+
+<?php
+include("../elements/nav.php");
+
+// if ( isset( $_POST["product"] ) ) {
+
+// } else {
+
+//product_number
+// }
+
+echo "{ <br>
+        product ID: {$_POST['product_id']} <br>
+        email: {$_POST['email']} <br>
+        message: {$_POST['message']} <br>
+        number: {$_POST['phone']} <br>
+    }";
+
+// echo"hi there";
