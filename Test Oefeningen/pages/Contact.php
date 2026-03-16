@@ -10,12 +10,14 @@
     <form action="../php/contact_form_submit.php" method="post">
 
         <h2>
-            <p>Contact & Service form</p>
+            <p>Contact & Service form
+            </p>
         </h2>
 
         <label for="product_id">Please enter the product number here</label> <br>
         <input type="number" name="product_id" id="product_id" placeholder="1234567890">
 
+        <br>
         <br>
         <br>
 
