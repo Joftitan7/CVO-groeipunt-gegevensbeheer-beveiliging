@@ -19,7 +19,7 @@
 
 
                 <label for="name">Username</label><br>
-                <input type="text" name="name" id="name" required placeholder="John Doe">
+                <input type="text" name="name" id="name" required placeholder="John Doe" pattern="[A-Za-z0-9]+">
 
 
                 <br><br>

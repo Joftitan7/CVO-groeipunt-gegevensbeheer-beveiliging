@@ -51,3 +51,8 @@ echo "{ <br>
     }";
 
 // echo"hi there";
+
+
+validation
+
+if (empty($email)) || !filter_var($email, FILTER_VALIDATE_EMAIL) //This will check email is valid clientside (notice the "!" in front of the filter)

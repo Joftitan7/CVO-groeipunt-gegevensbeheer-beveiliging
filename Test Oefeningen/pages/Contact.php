@@ -10,8 +10,7 @@
     <form action="../php/contact_form_submit.php" method="post">
 
         <h2>
-            <p>Contact & Service form
-            </p>
+            <p>Contact & Service form</p>
         </h2>
 
         <label for="product_id">Please enter the product number here</label> <br>
@@ -20,11 +19,11 @@
         <br>
         <br>
         <br>
-        <br>
 
         <label for="msg">Please write your complaint or feedback</label><br>
         <textarea name="message" id="msg" placeholder="Please remember to be respectful and considerate."></textarea>
 
+        <br>
         <br>
         <br>
 
