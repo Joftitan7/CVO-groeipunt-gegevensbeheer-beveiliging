@@ -1,0 +1,46 @@
+/* navbar css */
+
+.navbar ul {
+    list-style-type: none;
+    /* background-color: grey; */
+    padding: 0%;
+    margin: 0px;
+    overflow: hidden;
+
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+
+}
+
+.navbar li:hover {
+    background-color: #006699;
+    color: white;
+}
+
+.navbar li {
+    float: right;
+    /* border-radius: 20px; */
+    /* background-color: aliceblue; */
+
+}
+
+.navbar {
+    background: #222;
+    border: 2px solid yellow;
+    top: 0;
+    position: sticky;
+    /* height: fit-content; */
+}
+
+#prijs {
+    border-left: 2px solid white;
+    margin-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

@@ -3,6 +3,8 @@
 
     <?php
     include("../elements/nav.php");
+    include("../php/beveiliging.php");
+
     ?>
 
 
@@ -17,32 +19,46 @@
         <h3>Registration</h1>
             <form action="../php/Registration_submit.php" method="post">
 
+                <?php
+                $csrf = GenerateCSRF();
+                ?>
 
-                <label for="name">Username</label><br>
-                <input type="text" name="name" id="name" required placeholder="John Doe" pattern="[A-Za-z0-9]+">
-
-
-                <br><br>
-                <label for="email">Email</label> <br>
-                <input type="email" name="email" id="email" placeholder="Johndoe@gmail.com" required>
-                <br><br>
+                <fieldset>
+                    <legend>Personalia</legend>
 
 
-                <label for="passw">Password</label><br>
-                <input type="password" name="passw" id="passw" required placeholder="12345">
-                <br>
-                <br>
+
+                    <label for="name">Username</label><br>
+                    <input type="text" name="name" id="name" required placeholder="John Doe" pattern="[A-Za-z0-9]+">
+
+                    <br>
+                    <br>
+
+                    <label for="email">Email</label> <br>
+                    <input type="email" name="email" id="email" placeholder="Johndoe@gmail.com" required>
+
+                    <br>
+                    <br>
+
+                    <label for="passw">Password</label><br>
+                    <input type="password" name="passw" id="passw" required placeholder="12345">
+
+                    <br>
+                    <br>
 
 
-                <label for="passw1">Confirm password</label>
-                <br>
-                <input type="password" name="passw1" id="passw1" required placeholder="*****">
-                <br>
-                <br>
+                    <label for="passw1">Confirm password</label>
 
-                <button type="submit" id="btn"> Submit</button>
-                <br>
+                    <br>
 
+                    <input type="password" name="passw1" id="passw1" required placeholder="*****">
+
+                    <br>
+                    <br>
+                    <input type="hidden" hidden name="csrf_token" value="<?php echo $csrf; ?>">
+                    <button type="submit" id="btn"> Submit</button>
+                    <br>
+                </fieldset>
             </form>
 
             <p>Do you have an account? Login <a href="Login.php">here</a></p>

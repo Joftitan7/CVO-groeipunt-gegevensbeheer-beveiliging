@@ -1,0 +1,37 @@
+.footer a {
+    color: aliceblue;
+    text-decoration-color: aliceblue;
+    text-decoration: none;
+
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0%;
+    margin: 0%;
+    overflow: hidden;
+    display: inline-flex;
+
+}
+
+footer {
+    background: #222;
+    color: white;
+    bottom: 0;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+
+}
+
+.footer ul>li {
+    /* display: inline; */
+    padding: 5px 10px;
+    margin: 0%;
+}
+
+#links li:hover,
+#links a:hover {
+    background-color: #006699;
+    text-decoration: underline;
+}
