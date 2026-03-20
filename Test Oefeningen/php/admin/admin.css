@@ -1,7 +1,7 @@
 td {
-    border-left: 2px solid black;
+    /* border-left: 2px solid black; */
     text-align: center;
-    padding: 2% 0;
+    padding: 1% 0;
     overflow: scroll;
     font-size: smaller;
 }
@@ -11,4 +11,41 @@ tbody {
     gap: 100px;
     margin: 10px;
     font-size: smaller;
+}
+
+table {
+    background-color: rgb(100, 181, 104);
+    border-radius: 20px;
+    padding: 20px;
+    margin: auto;
+}
+
+body {
+    text-align: center;
+}
+
+.edit-button {
+    background-color: rgb(129, 212, 250);
+    border-radius: 30px;
+    border: 0px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.edit-button:hover {
+    background-color: rgb(82, 137, 163);
+}
+
+
+#deleteSelectedButton {
+    border: 0px;
+    background-color: rgb(236, 109, 106);
+    padding: 10px;
+    border-radius: 20px;
+
+}
+
+#deleteSelectedButton:hover {
+    background-color: rgb(191, 88, 86);
+
 }

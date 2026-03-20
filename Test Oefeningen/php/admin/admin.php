@@ -10,6 +10,20 @@
 
 <body>
 
+    <h3>Filteren</h3>
+
+    <label for="filterNaam">Zoek op naam:</label>
+    <input type="text" id="filterNaam" placeholder="Naam...">
+
+    <label for="filterCategorie">Filter op categorie:</label>
+    <select id="filterCategorie">
+        <option value="">-- Alle categorieën --</option>
+    </select>
+
+    <button id="filterButton">Filter</button>
+    <br><br>
+
+
 
     <h2>Nieuw product toevoegen</h2>
 
@@ -50,6 +64,7 @@
         <table id="productenTable">
             <thead>
                 <tr>
+                    <th></th>
                     <th>ID</th>
                     <th>Naam</th>
                     <th>Omschrijving</th>
@@ -61,6 +76,9 @@
 
             </tbody>
         </table>
+        <br><br>
+        <button id="deleteSelectedButton" class="btn-annuleer">Verwijder geselecteerde producten</button>
+
 
         <script src="admin.js"></script>
 </body>
