@@ -1,0 +1,14 @@
+td {
+    border-left: 2px solid black;
+    text-align: center;
+    padding: 2% 0;
+    overflow: scroll;
+    font-size: smaller;
+}
+
+tbody {
+
+    gap: 100px;
+    margin: 10px;
+    font-size: smaller;
+}

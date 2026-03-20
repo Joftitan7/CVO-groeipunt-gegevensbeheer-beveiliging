@@ -6,13 +6,6 @@
     include("../elements/nav.php");
     include("../php/beveiliging.php");
 
-
-
-
-
-
-
-
     ?>
 
     <link rel="stylesheet" href="../css/contact_form.css">
@@ -31,7 +24,7 @@
             </legend>
 
             <label for="product_id">Please enter the product number here</label> <br>
-            <input type="number" name="product_id" id="product_id" placeholder="1234567890">
+            <input type="number" name="product_id" id="product_id" placeholder="1234567890" pattern="^[0-9]{1,10}$">
 
             <br>
             <br>
@@ -56,13 +49,13 @@
             <label for="email">
                 <p>What Email can we contact you on?</p>
             </label>
-            <input type="email" name="email" id="email" placeholder="Johndoe@gmail.com">
+            <input type="email" name="email" id="email" placeholder="Johndoe@gmail.com" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
 
             <br>
             <br>
 
             <label for="phone">What Number can we contact you on?</label> <br>
-            <input type="tel" name="phone" id="phone" placeholder="+32 xxxxxxxx" pattern="\d*">
+            <input type="tel" name="phone" id="phone" placeholder="+32 xxxxxxxx" pattern="^\+?[0-9]{8,15}$">
 
             <br>
             <br>

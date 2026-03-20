@@ -35,7 +35,7 @@
                     <br>
 
                     <label for="email">Email</label> <br>
-                    <input type="email" name="email" id="email" placeholder="Johndoe@gmail.com" required>
+                    <input type="email" name="email" id="email" placeholder="Johndoe@gmail.com" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
 
                     <br>
                     <br>

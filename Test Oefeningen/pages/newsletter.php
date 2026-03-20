@@ -19,8 +19,8 @@
                     ?>
                     <input type="hidden" hidden name="csrf_token" value="<?php echo $crsf; ?>">
 
-                    <input type="email" name="email" placeholder="Enter your email address" required>
-                    <button type="submit">Subscribe</button>
+                    <input type="email" name="email" placeholder="Enter your email address" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
+                    <button type=" submit">Subscribe</button>
                 </form>
             </fieldset>
 
