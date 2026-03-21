@@ -1,40 +1,37 @@
-
 async function loadProducts() {
-    try {
-        const response = await fetch("api/get_products.php");
-        const producten = await response.json();
+    const naam = document.getElementById("filterNaam").value;
+    const categorie = document.getElementById("filterCategorie").value;
 
-        const tbody = document.querySelector("#productenTable tbody");
-        tbody.innerHTML = "";
+    const response = await fetch(
+        `api/get_products.php?naam=${encodeURIComponent(naam)}&categorie=${encodeURIComponent(categorie)}`
+    );
 
-        producten.forEach(product => {
-            const row = document.createElement("tr");
+    const producten = await response.json();
 
-            row.innerHTML = `
-                <td><input type="checkbox" class="delete-checkbox" value="${product.id}"></td>
-                <td>${product.id}</td>
-                <td>${product.naam}</td>
-                <td>${product.omschrijving}</td>
-                <td>${product.prijs}</td>
-                <td>${product.categorie}</td>
-                <td>
-                    <button class="edit-button" data-id="${product.id}">Bewerken</button>
-                </td>
-            `;
+    const tbody = document.querySelector("#productenTable tbody");
+    tbody.innerHTML = "";
 
+    producten.forEach(product => {
+        const row = document.createElement("tr");
 
-            tbody.appendChild(row);
-        });
+        row.innerHTML = `
+            <td><input type="checkbox" class="delete-checkbox" value="${product.id}"></td>
+            <td>${product.id}</td>
+            <td>${product.naam}</td>
+            <td>${product.omschrijving}</td>
+            <td>${product.prijs}</td>
+            <td>${product.categorie}</td>
+            <td><button class="edit-button" data-id="${product.id}">Bewerken</button></td>
+        `;
 
-        document.querySelectorAll('.edit-button').forEach(btn => {
-            btn.addEventListener('click', openUpdateForm);
-        });
+        tbody.appendChild(row);
+    });
 
-    } catch (error) {
-        console.error("Fout bij ophalen:", error);
-        
-    }
+    document.querySelectorAll(".edit-button").forEach(btn => {
+        btn.addEventListener("click", openUpdateForm);
+    });
 }
+
 
 loadProducts();
 
@@ -42,7 +39,16 @@ document.getElementById("addProductForm").addEventListener("submit", function(e)
     e.preventDefault();
 
 
+    ////
+    ////loadProducts();
 
+
+    ////document.getElementById("addProductForm").addEventListener("submit", function(e) {
+
+    //console.log(" 
+    // 
+    //")
+    //// e.preventDefault();
 
 
     const formData = new FormData(this);
@@ -64,7 +70,7 @@ document.getElementById("addProductForm").addEventListener("submit", function(e)
 async function openUpdateForm(event) {
     const id = event.target.dataset.id;
 
-    const response = await fetch(`api/get_product.php?id=${id}`);
+    const response = await fetch(`api/get_product.php?id=${id}`)
     const product = await response.json()
 
     // document.getElementById("updateProducId").value = product.id;
@@ -99,7 +105,7 @@ document.getElementById("updateForm").addEventListener("submit", async function(
     alert(result.message)
 
     document.getElementById("updateModal").style.display = "none"
-    loadProducts();
+    loadProducts()
 });
 
 
@@ -113,7 +119,7 @@ document.getElementById('cancelUpdate').addEventListener('click', function (e) {
     
 
 document.getElementById("deleteSelectedButton").addEventListener("click", async () => {
-    const selectedCheckboxes = document.querySelectorAll(".delete-checkbox:checked");
+    const selectedCheckboxes = document.querySelectorAll(".delete-checkbox:checked")
     const selectedIds = Array.from(selectedCheckboxes).map(cb => cb.value)
 
     if (selectedIds.length === 0) {
@@ -128,7 +134,7 @@ document.getElementById("deleteSelectedButton").addEventListener("click", async 
     })
 
     const result = await response.json();
-    alert(result.message);
+    alert(result.message)
 
     loadProducts()
 });
@@ -138,3 +144,38 @@ document.getElementById("deleteSelectedButton").addEventListener("click", async 
 
 
 //
+
+
+
+
+async function loadCategories() {
+    const response = await fetch("api/get_categories.php")
+    const categories = await response.json()
+
+    const select = document.getElementById("filterCategorie")
+
+    categories.forEach(cat => {
+        const option = document.createElement("option")
+        option.value = cat.categorie
+        option.textContent = cat.categorie
+        select.appendChild(option)
+    })
+}
+
+loadCategories()
+
+
+// document.getElementById("filterButton").addEventListener("click", loadProducts);
+
+
+
+
+
+
+
+document.getElementById("filterButton").addEventListener("click", loadProducts)
+
+
+
+document.getElementById("filterCategorie").addEventListener("change", loadProducts)
+document.getElementById("filterNaam").addEventListener("input", loadProducts)
